@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SampleController {
 
-    private final SampleService sampleService;
+    private final SampleServiceInterface sampleServiceInterface;
 
     @Lazy
-    public SampleController(SampleService sampleService) {
-        this.sampleService = sampleService;
+    public SampleController(SampleServiceInterface sampleService) {
+        this.sampleServiceInterface = sampleService;
     }
 
     @PostMapping("/hello-world")
     @ResponseStatus(HttpStatus.OK)
     public String helloWorld() {
-        return sampleService.getHelloWorld();
+        return sampleServiceInterface.getHelloWorld();
     }
 }

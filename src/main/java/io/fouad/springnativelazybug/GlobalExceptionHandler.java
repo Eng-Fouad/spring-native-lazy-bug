@@ -14,3 +14,6 @@ public class GlobalExceptionHandler {
         return ResponseEntity.badRequest().body("{\"error_code\":%d}".formatted(exception.getCode()));
     }
 }
+
+
+
